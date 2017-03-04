@@ -1,0 +1,133 @@
+syntax = "proto2";
+option java_package = "ml.generall";
+
+// Position of meta info
+message Position {
+    // from position
+    required int32 fromPos = 1;
+    // to position
+    required int32 toPos = 2;
+    // Next available id: 3
+}
+
+// parameters of mention
+message Params {
+    // Summ weight of tokens
+    optional double sum_weight = 1; // Required
+    // average weight of tokens
+    optional double avg_wight = 2;  // Required
+    // Max weight of tokens
+    optional double max_wight = 3;  // Required
+    // count of tokens
+    optional int32 word_count = 4;  // Required
+    // Next available id: 5
+}
+
+// Context of mention
+message Context {
+    // size of context
+    required int32 size = 1;  // Required
+    // left context string
+    optional string left = 2;
+    // right context string
+    optional string right = 3;
+    // Next available id: 1
+}
+
+// Concept link
+message Concept {
+    // Link to concept
+    required string link = 1;  // Required
+    // Count of hits
+    optional int32 hits = 2;
+
+    // Average score
+    optional double avgScore = 3;
+
+    // Max score
+    optional double maxScore = 4;
+
+    // Minimal score
+    optional double minScore = 5;
+
+    // Average normalized score
+    optional double avgNorm = 6;
+
+    // Average soft-max normalized score
+    optional double avgSoftMax = 7;
+
+    // Next available id: 8
+}
+
+//Mention description 
+message Mention {
+    // id of mention
+    required int32 id = 1;  // Required int64 id = 1;
+    // Resolver name: elastic or wikimention
+    optional string resolver = 2;  // Required
+
+    // Text of mention
+    optional string text = 3;  // Required
+
+    // Position of mention
+    optional Position position = 4;  // Required
+
+    // Params of mention
+    optional Params params = 5;  // Required
+
+    // Context of mention
+    optional Context context = 6;  // Required
+
+    // Concepts
+    repeated Concept concepts = 7;
+
+    // Next available id: 8
+}
+
+// Token description
+message Token {
+    // Token string
+    optional string token = 1;  // Required
+
+    // Lemma of token
+    optional string lemma = 2;  // Required
+
+    // Part of speech tag
+    optional string pos_tag = 3;  // Required
+
+    // parser tag
+    optional string parserTag = 4;  // Required
+
+    // Group id of token
+    optional int32 group = 5;  // Required
+
+    // Mentions id of this token
+    repeated int32 mentions = 6;
+
+    // Next available id: 1
+}
+
+// Sentence object. 
+message Sentence {
+    // Complete sentence text
+    optional string sent = 1;  // Required
+
+    // Mentions
+    repeated Mention mentions = 2;
+
+    // Name of sentence parser: CoreNLP, OpenNLP e.t.c
+    optional string parser_name = 3;  // Required
+
+
+    // Result of string parsing
+    repeated Token parse_result = 4;
+
+    // Sentence before observed
+    optional string prevSentence = 5;
+
+    // Sentence after observed
+    optional string nextSentence = 6;
+
+
+    // Next available id: 7
+}
