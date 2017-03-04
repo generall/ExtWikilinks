@@ -42,9 +42,14 @@ Each protobuf file consists of protobuf encoded "messages" separated by the leng
 ```
 You can find description of used protobuf in `sentence.proto` file.
 
-For reading messages from this protobuf you can use `parseDelimitedFrom` in Java or `streamFromDelimitedInput` in Scala. Ruby example is also available in `proto_reader.rb` file.
+For reading messages from this protobuf you can use `parseDelimitedFrom` in Java or `streamFromDelimitedInput` in Scala. Ruby example is also available in `reader.rb` file.
 
 # Example of extended sentence
+
+![Alt text](/result_dataset.png)
+
+Other sentence example (in json)
+
  ```json
 {
     "sent": "Isaac Asimov advocated something like that with his \"Three Laws.\"",
