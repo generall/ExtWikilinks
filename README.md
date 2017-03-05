@@ -44,6 +44,11 @@ You can find description of used protobuf in `sentence.proto` file.
 
 For reading messages from this protobuf you can use `parseDelimitedFrom` in Java or `streamFromDelimitedInput` in Scala. Ruby example is also available in `reader.rb` file.
 
+# Basic statistics
+
+Number of sentences: 40 million
+Number of unique entities: 2 million
+
 # Example of extended sentence
 
 ![Alt text](/result_dataset.png)
