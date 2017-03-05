@@ -47,6 +47,7 @@ For reading messages from this protobuf you can use `parseDelimitedFrom` in Java
 # Basic statistics
 
 Number of sentences: 40 million
+
 Number of unique entities: 2 million
 
 # Example of extended sentence
