@@ -1,7 +1,7 @@
 # ExtWikilinks
 ExtWikilinks is a dataset, obtained from http://www.iesl.cs.umass.edu/data/wiki-links using enrichment of CoreNLP and Elasticsearch .
 
-Download at: ....
+Download at: http://academictorrents.com/details/80d0a22ed403b65f7cc0d81d51759b62c66b41ce
 
 # Purpose
 
