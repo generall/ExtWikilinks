@@ -28,7 +28,7 @@ def get_delimited_message_bytes(byte_stream, nr=4):
     return (total_len, length_bites[-delimiter_bytes:] + message_bytes)
 
 while True:
-    _, msg_buf = get_delimited_message_bytes(sys.stdin)
+    _, msg_buf = get_delimited_message_bytes(sys.stdin.buffer)
     sentence = sentence_pb2.Sentence()
     sentence.ParseFromString(msg_buf)
 
