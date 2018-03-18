@@ -3,6 +3,7 @@ This script should filter trash mentions
 """
 
 import sys
+import re
 
 input_filename = sys.argv[1]
 output_filename = sys.argv[2]
@@ -28,8 +29,10 @@ def check_mention(mention):
     if other > chars:
         return False
 
-    return True
+    if re.match(r'^[\s\d\w\-\,]*$', mention) is None:
+        return False
 
+    return True
 
 with open(input_filename) as inp:
     with open(output_filename, 'w') as out:
