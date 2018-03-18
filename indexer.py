@@ -35,7 +35,9 @@ INSERT INTO sentences VALUES (?, ?, ?, ?)
 
 with open(filename) as fd:
     for line in fd:
-        left_context, mention, concept, right_context = line.split('\t')
-        cursor.execute(insert_query, (left_context, mention, concept, right_context))
+        arr = line.split('\t')
+        if len(arr) == 4:
+            left_context, mention, concept, right_context = arr
+            cursor.execute(insert_query, (left_context, mention, concept, right_context))
 
 conn.commit()
