@@ -39,5 +39,7 @@ with open(filename) as fd:
         if len(arr) == 4:
             left_context, mention, concept, right_context = arr
             cursor.execute(insert_query, (left_context, mention, concept, right_context))
+        else:
+            print("Skip:", line)
 
 conn.commit()
