@@ -11,7 +11,7 @@ output_filename = sys.argv[2]
 
 def check_mention(mention):
     word_count = mention.count(' ')
-    if word_count > 5:
+    if word_count > 2:
         return False
 
     length = len(mention)
