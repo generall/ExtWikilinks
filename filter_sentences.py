@@ -52,6 +52,9 @@ with open('./cleaned_redirects.tsv') as fd:
 with open(input_filename) as inp:
     with open(output_filename, 'w') as out:
         for line in inp:
+            if line.count('\t') != 3:
+                continue
+
             left_context, mention_text, mention_link, right_context = line.split('\t')
 
             passed = True
