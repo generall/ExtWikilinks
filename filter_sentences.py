@@ -35,7 +35,7 @@ def check_mention(mention):
 
 def convert_concept(concept):
     concept = concept.strip('><')
-    m = re.search(r'/([^/]+)$', concept)
+    m = re.search(r'wiki/(.*)$', concept)
     if m:
         concept = m.groups()[0]
     else:
